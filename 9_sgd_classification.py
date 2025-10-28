@@ -25,7 +25,7 @@ w = [0, 0, 0] # начальное значение вектора w
 L = 0.005 # шаг изменения веса, сходимости
 
 lm = 0.01 # скорость забывания
-N = 50 # число итераций
+N = 500 # число итераций
 
 Q = np.mean([loss_sigmoid(w, x, y) for x, y in zip(x_train, y_train)]) # начальное значение функции потерь
 Q_plot = [Q]
@@ -61,7 +61,6 @@ for i in range(N):
 print(w)
 
 
-
 line_x = list(range(max(x_train[:, 0])))  # формирование графика разделяющей линии
 line_y = [-x * w[0] / w[1] - w[2] / w[1] for x in line_x]
 
@@ -77,5 +76,11 @@ plt.xlim([0, 45])
 plt.ylim([0, 75])
 plt.ylabel("длина")
 plt.xlabel("ширина")
+plt.grid(True)
+plt.show()
+
+plt.plot(list(range(N+1)), Q_plot, color='blue')
+plt.xlabel("Итерации")
+plt.ylabel("Функция потерь")
 plt.grid(True)
 plt.show()
