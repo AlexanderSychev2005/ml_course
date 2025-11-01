@@ -46,7 +46,7 @@ for i in range(N):
 
 
 Q = np.mean([loss(x, w, y) for x, y in zip(x_train, y_train)]) # истинное значение эмпирического риска после обучения
-print(w)
+print(w) # Выделил линейно независимые признаки, а все остальные отбросил
 print(Q)
 
 plt.plot(Q_plot)
