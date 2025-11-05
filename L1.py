@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def loss(w, x, y):
+def loss(w, x, y): # Сигмоидальная функция
     M = np.dot(w, x) * y
     return 2/ (1 + np.exp(M))
 
